@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<ion-view view-title="Team Sign Up">
+  <ion-content class="padding">
+
+    <div class="list">
+
+      <label class="item item-input">
+        <input type="text" placeholder="Team Name">
+      </label>
+
+      <label class="item item-input">
+        <div class="col">
+          <input type="text" placeholder="Uniform Color 1">
+        </div>
+        <div class="col">
+          <input type="text" placeholder="Uniform Color 2">
+        </div>
+      </label>
+
+      <label class="item item-input">
+        <input type="text" placeholder="Representing League *INTERLIGA OR SPECIAL TOURNAMENT PLAY*">
+      </label>
+    </div>
+
+    <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="Manager Name">
+      </label>
+
+      <label class="item item-input">
+        <div class="col">
+          <input type="number" placeholder="Contact Number">
+        </div>
+        <div class="col">
+          <input type="email" placeholder="Email">
+        </div>
+      </label>
+
+      <label class="item item-input">
+        <div class="col">
+          <input type="number" placeholder="Alternate Contact">
+        </div>
+        <div class="col">
+          <input type="email" placeholder="Email">
+        </div>
+      </label>
+    </div>
+
+    <input sign-pad signer="Coach" ng-model="signatureOne" />
+
+    <ion-scroll direction="y" class="waiver">
+      <p>
+        Upon signing I accept the rules and basis of the Stryke Soccer League
+      </p>
+    </ion-scroll>
+
+    <label class="item item-input">
+      <input type="number" placeholder="Amount Paid">
+    </label>
+
+  </ion-content>
+</ion-view>

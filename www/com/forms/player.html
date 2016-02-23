@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<ion-view view-title="Player Sign Up" class="forms">
+  <ion-content class="padding">
+
+    <div class="list">
+
+      <label class="item item-input">
+        <div class="col-40">
+          <input type="text" placeholder="First Name">
+        </div>
+
+        <div class="col-40">
+          <input type="text" placeholder="Last Name">
+        </div>
+
+        <div class="col-20">
+          <input type="text" placeholder="M" maxlength="1">
+        </div>
+      </label>
+
+      <label class="item item-input">
+        <div class="col">
+          <input type="date" placeholder="Birthdate">
+        </div>
+      </label>
+
+
+      <label class="item item-input">
+        <div class="col">
+          <input type="text" placeholder="Team Name">
+        </div>
+        <div class="col">
+          <input type="text" placeholder="Coach Name">
+        </div>
+      </label>
+
+      <label class="item item-input">
+        <div class="col">
+          <input type="text" placeholder="Address">
+        </div>
+        <div class="col">
+          <input type="number" placeholder="Ph#">
+        </div>
+      </label>
+
+
+    </div>
+
+    <div class="button-bar">
+
+        <input sign-pad signer="Player" ng-model="playerSign" />
+
+        <input ng-hide="{{under18}}" sign-pad signer="Parent" ng-model="parentSign" />
+
+    </div>
+
+    <ion-scroll direction="y" class="waiver">
+      <p>
+        *WAIVER and RELEASE OF LIABLITY*
+      </p>
+      <p>
+        In consideration of being allowed to participate in tournaments, activities, and league games of Stryke League Association, or their affiliated members.
+      </p>
+      <p>
+        1. Acknowledges, understand in total that he/she assumes all risk and accepts personal responsibility for what may occur by participating in activities that involve the risk of injuries, including permanent disability, death, and sever social and economic
+        loss, not only by their actions and omissions of others, the condition property, or any use of game rules.
+      </p>
+      <p>
+
+        2. Resigns, leaves and agrees not to sue Kent Aztec Soccer League Association or its affiliate members, their respective administrators, directors, agents, trainers, employees, voluntaries, sponsoring agencies, sponsors, advertisers, and if applicable,
+        owners and renters properties used for the tournament, which are referred to as organizers, demands losses, realization gives us arising due to injuries, including loss of life or damage to property, caused or presumably caused complete or in
+        part by the negligence or organizers involced.
+      </p>
+      <p>
+
+        I HAVE READ AND UNDERSTOOD WHAT IS MENTIONED ABOVE, I RENOUNCE OF MY RIGHTS, AND I’M SIGNING VOLUTARILY.
+      </p>
+
+    </ion-scroll>
+
+    <button class="button button-positive button-block">
+      Accept and Submit
+    </button>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,11 @@
+<button class="button button-full button-dark" ng-click="openSignatureModal()">
+  <div ng-hide="signature">
+    {{signer}} Signature
+  </div>
+
+  <div ng-show="signature">
+    <img ng-src="{{signature}}" class="sign" />
+    <br>
+    Edit {{signer}}
+  </div>
+</button>
