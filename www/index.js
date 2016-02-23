@@ -12,7 +12,7 @@ angular.module('app', [
   ])
   .config(config)
   .run(run)
-  .factory('DatabaseService', DatabaseServ)
+  .factory('DatabaseService', DatabaseSrvc)
   .controller('HomeCtrl', HomeCtrl)
   .controller('RecipeCtrl', RecipeCtrl);
 
@@ -65,5 +65,5 @@ function run($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
-  fb = new Firebase("https://dazzling-torch-209.firebaseio.com/users/");
+  fb = new Firebase("https://e-a-t.firebaseio.com/users/");
 }

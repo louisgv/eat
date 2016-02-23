@@ -70,4 +70,5 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, DatabaseService) {
       }
     });
   }
+
 }
