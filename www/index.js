@@ -12,7 +12,8 @@ angular.module('app', [
   ])
   .config(config)
   .run(run)
-  .factory('DatabaseService', DatabaseSrvc)
+  .factory('DatabaseService', DatabaseService)
+  .factory('BitlyService', BitlyService)
   .controller('HomeCtrl', HomeCtrl)
   .controller('RecipeCtrl', RecipeCtrl);
 

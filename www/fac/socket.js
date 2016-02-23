@@ -1,4 +1,4 @@
-function SocketSrvc (socketFactory) {
+function SocketService (socketFactory) {
   console.log('SocketServ');
 
   var mis = io.connect('https://quan-api.mybluemix.net/');

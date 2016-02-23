@@ -2,7 +2,7 @@
 
 var recipesAPI = "./com/home/db/recipes.json";
 
-function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, DatabaseService) {
+function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, DatabaseService, BitlyService) {
   console.log("HomeCtrl");
 
   var home = this;
@@ -44,31 +44,39 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, DatabaseService) {
       );
   };
 
-  if(!DatabaseService.recipes) {
-    fetchRecipe();
-  } else {
-    console.log(DatabaseService.recipes);
-    home.recipes = DatabaseService.recipes;
-  }
+  BitlyService.shortify(encodeURI('https://github.com/louisgv/hoc'))
+    .success(function (response) {
 
-  if(DatabaseService.user) {
-    home.user = DatabaseService.user;
-  }
+      console.log('bit.ly/' + response.data.hash);
 
-  if(!DatabaseService.userName) {
-    var promptPopup = $ionicPopup.prompt({
-      title: 'Provide Your User Name'
-    });
+    })
 
-    promptPopup.then(function (res) {
-      if(res) {
-        console.log(res);
-        DatabaseService.userName = res;
-        home.user = DatabaseService.user = DatabaseService.newUser(res);
-      } else {
-        console.log('Please enter input');
-      }
-    });
-  }
+
+  // if(!DatabaseService.recipes) {
+  //   fetchRecipe();
+  // } else {
+  //   console.log(DatabaseService.recipes);
+  //   home.recipes = DatabaseService.recipes;
+  // }
+  //
+  // if(DatabaseService.user) {
+  //   home.user = DatabaseService.user;
+  // }
+  //
+  // if(!DatabaseService.userName) {
+  //   var promptPopup = $ionicPopup.prompt({
+  //     title: 'Provide Your User Name'
+  //   });
+  //
+  //   promptPopup.then(function (res) {
+  //     if(res) {
+  //       console.log(res);
+  //       DatabaseService.userName = res;
+  //       home.user = DatabaseService.user = DatabaseService.newUser(res);
+  //     } else {
+  //       console.log('Please enter input');
+  //     }
+  //   });
+  // }
 
 }

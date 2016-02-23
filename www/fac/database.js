@@ -1,4 +1,4 @@
-function DatabaseSrvc($firebaseObject) {
+function DatabaseService($firebaseObject) {
   console.log('DatabaseServ');
 
   var userName;
