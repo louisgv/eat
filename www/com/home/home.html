@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <ion-view class="home">
-  <ion-content class="has-header app-bg padding">
+  <ion-content class="has-header app-bg xcentre">
 
-    <button class="button button-block button-large" ng-repeat="r in home.recipes" ng-click="home.chooseRecipe($index)" ng-class="home.colors[r.level-1]" ng-show="home.user.level>= r.level">
+    <div class="card question-form">
+      <div class="item item-text-wrap item-positive">
+      </div>
 
-      <b>{{r.name}}</b>, level {{r.level}}
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">First Name</span>
+          <input type="text" placeholder="John">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Last Name</span>
+          <input type="text" placeholder="Suhr">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Email</span>
+          <input type="text" placeholder="john@suhr.com">
+        </label>
+      </div>
 
-    </button>
+      <label class="item item-input">
+        <span class="input-label">How many children do you have?</span>
+        <input type="number" placeholder="A number, e.g 2">
+      </label>
+    </div>
 
   </ion-content>
 </ion-view>

@@ -20,36 +20,14 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, DatabaseService, Bi
     // home.recipe.steps = home.recipe.steps.reverse();
   }
 
-  var fetchRecipe = function () {
-    $ionicLoading.show({
-      template: '<ion-spinner icon="ripple" class="spinner-energized"></ion-spinner><br>Fetching Recipes',
-      animation: 'fade-in'
-    });
 
-    $http.get(recipesAPI)
-      .then(
-        function (response) {
-          console.log(response.data);
-          home.recipes = response.data.recipe;
-          home.user = DatabaseService.user;
 
-          DatabaseService.recipes = response.data.recipe;
-          $ionicLoading.hide();
-        },
-        function (err) {
-          $ionicLoading.hide();
-          alert("...YOLO...");
-          return console.log(err);
-        }
-      );
-  };
-
-  BitlyService.shortify(encodeURI('https://github.com/louisgv/hoc'))
-    .success(function (response) {
-
-      console.log('bit.ly/' + response.data.hash);
-
-    })
+  // BitlyService.shortify(encodeURI('https://github.com/louisgv/hoc'))
+  //   .success(function (response) {
+  //
+  //     console.log('bit.ly/' + response.data.hash);
+  //
+  //   })
 
 
   // if(!DatabaseService.recipes) {
