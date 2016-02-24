@@ -9,6 +9,17 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, DatabaseService, Bi
 
   home.colors = ["button-positive", "button-royal", "button-balanced"];
 
+  home.races = ["American Indian or Alaskan Native", "Asian", "Black or African American", "Native Hawaiian or Other Pacific Islander", "White"]
+
+  var childForm = {
+    firstName: "",
+    middleInitial: "",
+    lastName: "",
+    student: false,
+    fosterChild: false,
+    hmr: false
+  }
+
   home.chooseRecipe = function (index) {
 
     // home.recipe = angular.copy(DatabaseService.recipes[index]);
@@ -19,6 +30,16 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, DatabaseService, Bi
 
     // home.recipe.steps = home.recipe.steps.reverse();
   }
+
+  home.constructChildList = function (childCount) {
+    console.log(childCount);
+    if(!childCount) return;
+    home.childList = [];
+    for(var i = 0; i < home.childCount; i++) {
+      home.childList.push(childForm);
+    }
+  }
+
 
 
 

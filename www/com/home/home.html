@@ -1,30 +1,94 @@
 <!DOCTYPE html>
-<ion-view class="home">
-  <ion-content class="has-header app-bg xcentre">
+<ion-view class="home" title="<b>Step 1:</b> Children List">
+
+  <ion-content class="has-header has-footer app-bg" overflow-scroll="true">
 
     <div class="card question-form">
       <div class="item item-text-wrap item-positive">
       </div>
 
-      <div class="list">
-        <label class="item item-input item-stacked-label">
-          <span class="input-label">First Name</span>
-          <input type="text" placeholder="John">
-        </label>
-        <label class="item item-input item-stacked-label">
-          <span class="input-label">Last Name</span>
-          <input type="text" placeholder="Suhr">
-        </label>
-        <label class="item item-input item-stacked-label">
-          <span class="input-label">Email</span>
-          <input type="text" placeholder="john@suhr.com">
-        </label>
+      <!-- <label class="item item-input row">
+        <span class="col col-80 input-label">How many children do you have?</span>
+        <input class="col col-20" type="number" placeholder="E.g 2" ng-model="childCount" ng-change="home.constructChildList(childCount)">
+      </label> -->
+
+      <div class="item">
+        <div class="row">
+
+          <input class="col col-50" type="text" placeholder="First Name" ng-model="name.firstName" ng-change="console.log(childCount)">
+
+          <input class="col col-10" type="text" placeholder="MI" ng-model="name.middleInitial" ng-change="console.log(childCount)" maxlength="1">
+
+          <input class="col col-40" type="text" placeholder="Last Name" ng-model="name.lastName" ng-change="console.log(childCount)">
+
+        </div>
+
+
       </div>
 
-      <label class="item item-input">
-        <span class="input-label">How many children do you have?</span>
-        <input type="number" placeholder="A number, e.g 2">
-      </label>
+      <div class="item">
+        <div class="row">
+          <label class="col col-90">Student?</label>
+          <label class="col col-10 toggle toggle-assertive">
+            <input type="checkbox" ng-model="child.isStudent">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <label class="col col-90">Homeless, Migrant, Runaway?</label>
+          <label class="col col-10 toggle toggle-energized">
+            <input type="checkbox" ng-model="child.isHMR">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <label class="col col-90"> <b>(Optional)</b> Racial and Ethnic</label>
+          <label class="col col-10 toggle toggle-positive">
+            <input type="checkbox" ng-model="show">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div ng-show="show">
+        <div class="item text-center">
+          <label> <b>Ethnicity</b>:</label>
+        </div>
+        <div class="item">
+          <div class="row">
+            <label class="col col-90">Is this child Hispanic or Latino?</label>
+            <label class="col col-10 toggle toggle-calm">
+              <input type="checkbox" ng-model="child.isHispanic">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="item text-center">
+          <label> <b>Race</b> (check one or more):</label>
+        </div>
+
+        <ion-checkbox ng-repeat="r in home.races" ng-model="checked" ng-change="recipe.stateChanged(checked)">
+          <div class="item">
+            {{r}}
+          </div>
+        </ion-checkbox>
+
+      </div>
+
     </div>
 
   </ion-content>
