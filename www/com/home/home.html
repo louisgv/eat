@@ -81,6 +81,16 @@
           <label> <b>Race</b> (check one or more):</label>
         </div>
 
+        <div class="row" ng-repeat="r in home.races">
+          <label class="col col-90">{{r}}</label>
+          <label class="col col-10 toggle toggle-calm">
+            <input type="checkbox" ng-model="child.isHispanic">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
+        </div>
+
         <ion-checkbox ng-repeat="r in home.races" ng-model="checked" ng-change="recipe.stateChanged(checked)">
           <div class="item">
             {{r}}
