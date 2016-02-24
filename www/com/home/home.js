@@ -10,11 +10,11 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, DatabaseService, Bi
   home.colors = ["button-positive", "button-royal", "button-balanced"];
 
   home.races = {
-    ", or Alaskan Native": "",
-    "Asian": "",
-    "African ,": "",
-    "Native Hawaiian or Other Pacific Islander": "",
-    "White": ""
+    "American or Alaskan Native": "toggle-calm",
+    "Asian": "toggle-balanced",
+    "African American": "toggle-energized",
+    "Native Hawaiian or Other Pacific Islander": "toggle-assertive",
+    "White": "toggle-positive"
   }
 
   var childForm = {
