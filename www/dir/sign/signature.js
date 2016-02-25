@@ -33,15 +33,16 @@ function signPad($ionicModal) {
         $scope.signatureModal.show();
         canvas = angular.element($scope.signatureModal.modalEl)
           .find('canvas')[0];
+
         if(!$scope.signature) {
           canvas.height = 150;
         }
         $scope.signaturePad = new SignaturePad(canvas, {
-          backgroundColor: '#000',
+          backgroundColor: '#FFF',
           minWidth: 1,
-          maxWidth: 1.5,
+          maxWidth: 2,
           dotSize: 3,
-          penColor: 'rgb(66, 133, 244)',
+          // penColor: 'rgb(66, 133, 244)',
           onEnd: function () {
             $scope.signature = $scope.signaturePad.toDataURL();
           }
