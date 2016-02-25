@@ -7,15 +7,16 @@
 
 angular.module('app', [
     'ionic',
-    'firebase',
-    'angular-svg-round-progress'
+    // 'firebase',
+    // 'angular-svg-round-progress'
   ])
   .config(config)
   .run(run)
-  .factory('DatabaseService', DatabaseService)
+  // .factory('DatabaseService', DatabaseService)
+  .directive('signPad', signPad)
   .factory('BitlyService', BitlyService)
   .controller('HomeCtrl', HomeCtrl)
-  .controller('RecipeCtrl', RecipeCtrl);
+  // .controller('RecipeCtrl', RecipeCtrl)
 
 function config($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
@@ -66,5 +67,5 @@ function run($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
-  fb = new Firebase("https://e-a-t.firebaseio.com/users/");
+  // fb = new Firebase("https://e-a-t.firebaseio.com/users/");
 }

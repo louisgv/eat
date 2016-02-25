@@ -2,7 +2,7 @@
 
 var recipesAPI = "./com/home/db/recipes.json";
 
-function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, DatabaseService, BitlyService) {
+function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService) {
   console.log("HomeCtrl");
 
   var home = this;
@@ -17,6 +17,18 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, DatabaseService, Bi
     "White": "toggle-positive"
   }
 
+  function generateUUID() {
+    var d = new Date()
+      .getTime();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = (d + Math.random() * 16) % 16 | 0;
+      d = Math.floor(d / 16);
+      return(c == 'x' ? r : (r & 0x3 | 0x8))
+        .toString(16);
+    });
+    return uuid;
+  };
+
   var childForm = {
     firstName: "",
     middleInitial: "",
@@ -27,7 +39,6 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, DatabaseService, Bi
   }
 
   home.chooseRecipe = function (index) {
-
     // home.recipe = angular.copy(DatabaseService.recipes[index]);
 
     $state.go('recipe', {
@@ -46,6 +57,7 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, DatabaseService, Bi
     }
   }
 
+  // home.
 
 
 

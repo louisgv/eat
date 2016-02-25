@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('signPad', signPad);
+// app.directive('signPad', signPad);
 
 function signPad($ionicModal) {
   var canvas = null,
@@ -9,13 +9,15 @@ function signPad($ionicModal) {
   return {
     scope: {
       signature: '=ngModel',
-      signer: '='
+      signer: '=',
+      signTemplate: '='
     },
     link: function ($scope, $element, $attrs, $controller) {
       $scope.signer = $attrs.signer;
       $scope.signature = null;
       $scope.signaturePadModel = {};
-      $ionicModal.fromTemplateUrl('mod/sign/pad.html', {
+      // console.log($attrs.signTemplate);
+      $ionicModal.fromTemplateUrl($attrs.signTemplate, {
           animation: 'slide-in-up',
           scope: $scope,
         })
@@ -29,8 +31,9 @@ function signPad($ionicModal) {
 
       $scope.openSignatureModal = function () {
         $scope.signatureModal.show();
-        canvas = angular.element($scope.signatureModal.modalEl).find('canvas')[0];
-        if (!$scope.signature){
+        canvas = angular.element($scope.signatureModal.modalEl)
+          .find('canvas')[0];
+        if(!$scope.signature) {
           canvas.height = 150;
         }
         $scope.signaturePad = new SignaturePad(canvas, {
@@ -71,6 +74,6 @@ function signPad($ionicModal) {
     require: 'ngModel',
     replace: true,
     restrict: 'A',
-    templateUrl: 'mod/sign/button.html'
+    templateUrl: 'dir/sign/button.html'
   };
 }

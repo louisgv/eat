@@ -2,11 +2,15 @@
 
 <div class="card text-center">
   <ion-item>
-    <b>Step 1:</b> Children List
+    <!-- XXX: Somethiing more catchy here -->
+    Children
   </ion-item>
 </div>
 
 <div class="card">
+
+  <!-- XXX: Toggle here -->
+
   <div class="item item-text-wrap item-positive">
   </div>
 
@@ -26,12 +30,11 @@
 
     </div>
 
-
   </div>
 
   <div class="item">
     <div class="row">
-      <label class="col col-90">Student?</label>
+      <label class="col col-90">Is this {{firstName}} Student?</label>
       <label class="col col-10 toggle toggle-assertive">
         <input type="checkbox" ng-model="child.isStudent">
         <div class="track">
@@ -43,7 +46,7 @@
 
   <div class="item">
     <div class="row">
-      <label class="col col-90">Homeless, Migrant, Runaway?</label>
+      <label class="col col-90">Is {{firstName}} Homeless, Migrant, Runaway?</label>
       <label class="col col-10 toggle toggle-energized">
         <input type="checkbox" ng-model="child.isHMR">
         <div class="track">
@@ -71,7 +74,7 @@
     </div>
     <div class="item">
       <div class="row">
-        <label class="col col-90">Is this child Hispanic or Latino?</label>
+        <label class="col col-90">Is {{firstName}} Hispanic or Latino?</label>
         <label class="col col-10 toggle toggle-royal">
           <input type="checkbox" ng-model="child.isHispanic">
           <div class="track">

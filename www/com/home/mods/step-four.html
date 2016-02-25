@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<div class="card text-center">
+  <ion-item class="item-text-wrap">
+    <!-- XXX: Somethiing more catchy here -->
+    Contact information and adult signature
+  </ion-item>
+</div>
+
+<!-- A checkbox for all these option down here -->
+
+<div class="card">
+
+  <ion-item class="item-dark"></ion-item>
+
+  <ion-item>
+    Address
+    <div class="row">
+      <input class="col col-50" type="text" placeholder="Street Address" ng-model="name.firstName">
+
+      <input class="col col-10" type="text" placeholder="Apt #" maxlength="10">
+
+      <input class="col col-40" type="text" placeholder="Last Name" ng-model="name.lastName" ng-change="console.log(childCount)">
+
+    </div>
+
+    <div class="row">
+      <input class="col col-40" type="text" placeholder="Zip" maxlength="5">
+
+      <input class="col col-50" type="text" placeholder="City">
+
+      <input class="col col-10" type="text" placeholder="State" maxlength="2">
+
+    </div>
+
+  </ion-item>
+
+  <ion-item>
+    Please fill out your name
+    <div class="row">
+
+      <input class="col col-50" type="text" placeholder="First Name" ng-model="name.firstName" ng-change="console.log(childCount)">
+
+      <input class="col col-10" type="text" placeholder="MI" ng-model="name.middleInitial" ng-change="console.log(childCount)" maxlength="1">
+
+      <input class="col col-40" type="text" placeholder="Last Name" ng-model="name.lastName" ng-change="console.log(childCount)">
+
+    </div>
+  </ion-item>
+
+  <ion-item>
+
+    <input type="phone" placeholder="Day-time Phone">
+
+    <input type="email" placeholder="Email">
+
+  </ion-item>
+
+  <ion-item>
+    Today's date: {{currentDate}}
+  </ion-item>
+
+  <ion-item>
+    <input sign-pad signer="Adult"
+      sign-template="com/home/mods/pad.html" ng-model="adultSignature" />
+  </ion-item>
+
+
+</div>
