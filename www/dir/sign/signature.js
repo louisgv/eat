@@ -37,7 +37,7 @@ function signPad($ionicModal) {
           canvas.height = 150;
         }
         $scope.signaturePad = new SignaturePad(canvas, {
-          backgroundColor: '#FFF',
+          backgroundColor: '#000',
           minWidth: 1,
           maxWidth: 1.5,
           dotSize: 3,
