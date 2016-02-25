@@ -20,9 +20,12 @@
           </div>
         </label>
       </div>
+      <div class="item item-input">
+        <input ng-show="snap" class="col" type="text" placeholder="Please Provide Your Case Number" ng-model="caseNumber.snap" ng-change="console.log(childCount)">
+      </div>
     </div>
     <div class="col col-33">
-      <div class="item item-toggle">
+      <div class="item item-toggle" ng-class="{'item-assertive': tanf}">
         TANF
         <label class="toggle toggle-energized">
           <input type="checkbox" ng-model="tanf">
@@ -31,9 +34,12 @@
           </div>
         </label>
       </div>
+      <div class="item item-input">
+        <input ng-show="tanf" class="col" type="text" placeholder="Please Provide Your Case Number" ng-model="caseNumber.tanf" ng-change="console.log(childCount)">
+      </div>
     </div>
     <div class="col col-33">
-      <div class="item item-toggle">
+      <div class="item item-toggle" ng-class="{'item-royal': fdpir}">
         FDPIR
         <label class="toggle toggle-balanced">
           <input type="checkbox" ng-model="fdpir">
@@ -42,18 +48,15 @@
           </div>
         </label>
       </div>
+      <div class="item item-input">
+        <input ng-show="fdpir" class="col" type="text" placeholder="Please Provide Your Case Number" ng-model="caseNumber.fdpir" ng-change="console.log(childCount)">
+      </div>
     </div>
   </div>
 </div>
 
 <div class="card">
   <div class="item item-text-wrap item-assertive">
-  </div>
-
-  <div class="item">
-    <div class="row">
-      <input class="col" type="text" placeholder="Case Number" ng-model="caseNumber" ng-change="console.log(childCount)">
-    </div>
   </div>
 
   <div class="button-bar">

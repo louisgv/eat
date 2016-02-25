@@ -59,7 +59,22 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService, Datab
 
   // home.
 
+  function zipToAddress(zip) {
+    return $http({
+        method: 'GET',
+        url: 'https://api.zippopotam.us/us/' + zip
+      })
+      .success(function (response) {
+        console.log(response);
+      })
+      .error(function (err) {
+        console.log('No city found... : ' + err);
+      });
 
+    // 'api.zippopotam.us/us/' + zip
+  }
+
+  zipToAddress(98002);
 
   // BitlyService.shortify(encodeURI('https://github.com/louisgv/hoc'))
   //   .success(function (response) {
