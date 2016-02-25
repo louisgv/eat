@@ -9,26 +9,12 @@
 <!-- A checkbox for all these option down here -->
 
 <div class="card">
-  <div class="item row text-center">
-    <ion-checkbox class="col col-33" ng-model="snap">
-      SNAP
-    </ion-checkbox>
-    <ion-checkbox class="col col-33" ng-model="tanf">
-      TANF
-    </ion-checkbox>
-    <ion-checkbox class="col col-33" ng-model="fdpir">
-      FDPIR
-    </ion-checkbox>
-  </div>
-</div>
-
-<div class="card">
   <div class="item item-text-wrap item-assertive">
   </div>
 
   <div class="item">
     <div class="row">
-      <input class="col" type="text" placeholder="Case Number" ng-model="caseNumber" ng-change="console.log(childCount)">
+      <input class="col" type="text" placeholder="Case Number">
     </div>
   </div>
 
@@ -45,21 +31,5 @@
   <button class="button button-full button-balanced" ng-click="recipe.finish()">
     <b>NEXT</b> <i class="icon ion-chevron-right"></i>
   </button>
-</div>
 
-<div class="card">
-  <ion-item>
-    For more info regarding each program, please tap each button below:
-  </ion-item>
-  <div class="button-bar">
-    <button class="button">
-       SNAP
-    </button>
-    <button class="button">
-       TANF
-    </button>
-    <button class="button">
-       FDPIR
-    </button>
-  </div>
 </div>
