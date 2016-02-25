@@ -29,71 +29,26 @@
       <input class="col col-40" type="text" placeholder="Last Name" ng-model="name.lastName" ng-change="console.log(childCount)">
 
     </div>
-
   </div>
 
-  <div class="item">
-    <div class="row">
-      <label class="col col-90">Is this {{firstName}} Student?</label>
-      <label class="col col-10 toggle toggle-assertive">
-        <input type="checkbox" ng-model="child.isStudent">
-        <div class="track">
-          <div class="handle"></div>
-        </div>
-      </label>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="row">
-      <label class="col col-90">Is {{firstName}} Homeless, Migrant, Runaway?</label>
-      <label class="col col-10 toggle toggle-energized">
-        <input type="checkbox" ng-model="child.isHMR">
-        <div class="track">
-          <div class="handle"></div>
-        </div>
-      </label>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="row">
-      <label class="col col-90"> <b>(Optional)</b> Racial and Ethnic</label>
-      <label class="col col-10 toggle toggle-positive">
-        <input type="checkbox" ng-model="show">
-        <div class="track">
-          <div class="handle"></div>
-        </div>
-      </label>
-    </div>
-  </div>
-
-  <div ng-show="show">
-    <div class="item text-center">
-      <label> <b>Ethnicity</b>:</label>
-    </div>
+  <ion-list ng-if="name.firstName">
     <div class="item">
       <div class="row">
-        <label class="col col-90">Is {{firstName}} Hispanic or Latino?</label>
-        <label class="col col-10 toggle toggle-royal">
-          <input type="checkbox" ng-model="child.isHispanic">
+        <label class="col col-90">Is {{name.firstName}} a Student?</label>
+        <label class="col col-10 toggle toggle-assertive">
+          <input type="checkbox" ng-model="child.isStudent">
           <div class="track">
             <div class="handle"></div>
           </div>
         </label>
       </div>
     </div>
-    <div class="item text-center">
-      <label> <b>Race</b> (check one or more):</label>
-    </div>
 
-    <div class="item" ng-repeat="(key, value) in home.races">
+    <div class="item">
       <div class="row">
-        <label class="col col-90">
-          {{key}}
-        </label>
-        <label class="col col-10 toggle" ng-class="value">
-          <input type="checkbox" ng-model="child[key]">
+        <label class="col col-90">Is {{name.firstName}} Homeless, Migrant or Runaway?</label>
+        <label class="col col-10 toggle toggle-energized">
+          <input type="checkbox" ng-model="child.isHMR">
           <div class="track">
             <div class="handle"></div>
           </div>
@@ -101,6 +56,51 @@
       </div>
     </div>
 
-  </div>
+    <div class="item">
+      <div class="row">
+        <label class="col col-90"> <b>(Optional)</b> Racial and Ethnic</label>
+        <label class="col col-10 toggle toggle-positive">
+          <input type="checkbox" ng-model="show">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div ng-show="show">
+      <div class="item text-center">
+        <label> <b>Ethnicity</b>:</label>
+      </div>
+      <div class="item">
+        <div class="row">
+          <label class="col col-90">Is {{name.firstName}} <b>Hispanic</b> or <b>Latino</b>?</label>
+          <label class="col col-10 toggle toggle-royal">
+            <input type="checkbox" ng-model="child.isHispanic">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="item text-center">
+        <label> <b>Race</b> (check one or more):</label>
+      </div>
+
+      <div class="item" ng-repeat="(key, value) in home.races">
+        <div class="row">
+          <label class="col col-90">
+            Is {{name.firstName}} <b>{{key}}</b>?
+          </label>
+          <label class="col col-10 toggle" ng-class="value">
+            <input type="checkbox" ng-model="child[key]">
+            <div class="track">
+              <div class="handle"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </ion-list>
 
 </div>

@@ -7,16 +7,17 @@
 
 angular.module('app', [
     'ionic',
-    // 'firebase',
-    // 'angular-svg-round-progress'
+    'ngAnimate',
+    '720kb.tooltips',
+    'firebase'
   ])
   .config(config)
   .run(run)
-  // .factory('DatabaseService', DatabaseService)
+  .factory('DatabaseService', DatabaseService)
   .directive('signPad', signPad)
   .factory('BitlyService', BitlyService)
   .controller('HomeCtrl', HomeCtrl)
-  // .controller('RecipeCtrl', RecipeCtrl)
+  .controller('RecipeCtrl', RecipeCtrl)
 
 function config($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 

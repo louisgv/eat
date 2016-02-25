@@ -10,15 +10,39 @@
 
 <div class="card">
   <div class="item row text-center">
-    <ion-checkbox class="col col-33" ng-model="snap">
-      SNAP
-    </ion-checkbox>
-    <ion-checkbox class="col col-33" ng-model="tanf">
-      TANF
-    </ion-checkbox>
-    <ion-checkbox class="col col-33" ng-model="fdpir">
-      FDPIR
-    </ion-checkbox>
+    <div class="col col-33">
+      <div class="item item-toggle" ng-class="{'item-energized': snap}">
+        SNAP
+        <label class="toggle toggle-assertive">
+          <input type="checkbox" ng-model="snap">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="col col-33">
+      <div class="item item-toggle">
+        TANF
+        <label class="toggle toggle-energized">
+          <input type="checkbox" ng-model="tanf">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="col col-33">
+      <div class="item item-toggle">
+        FDPIR
+        <label class="toggle toggle-balanced">
+          <input type="checkbox" ng-model="fdpir">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -53,13 +77,13 @@
   </ion-item>
   <div class="button-bar">
     <button class="button">
-       SNAP
+      SNAP
     </button>
     <button class="button">
-       TANF
+      TANF
     </button>
     <button class="button">
-       FDPIR
+      FDPIR
     </button>
   </div>
 </div>

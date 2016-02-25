@@ -2,7 +2,7 @@
 
 var recipesAPI = "./com/home/db/recipes.json";
 
-function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService) {
+function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService, DatabaseService) {
   console.log("HomeCtrl");
 
   var home = this;
