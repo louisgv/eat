@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<div class="card" ng-init="ind=0">
+
+  <span ng-include="'com/home/mods/tut/' + ind + '.html'"></span>
+
+  <div class="button-bar padding">
+    <button class="button button-full button-assertive" ng-click="ind = ind-1" ng-disabled="ind===0">
+      <i class="icon ion-chevron-left"></i> Back
+    </button>
+    <button class="button button-full button-positive" ng-click="ind = ind+1" ng-disabled="(ind===3) || !home.tutGo || !home.filler.fn">
+      Next <i class="icon ion-chevron-right"></i>
+    </button>
+  </div>
+
+  <button class="button button-full button-large button-balanced" ng-disabled="ind!==3" ng-click="home.finishTutorial()">
+    <i class="icon ion-checkmark"></i> Got it!
+  </button>
+
+</div>

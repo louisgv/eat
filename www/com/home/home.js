@@ -13,6 +13,11 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService, Datab
     console.log(stuff);
   }
 
+  home.filler = {
+  }
+
+  home.tutGo = true;
+
   home.races = {
     "American or Alaskan Native": "toggle-calm",
     "Asian": "toggle-balanced",

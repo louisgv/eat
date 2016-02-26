@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<div class="item item-toggle" ng-init="t2=true">
+  A {{t2? 'highlighted':'non-highlighted'}} trigger says {{t2? 'yes':'no'}}
+  <label class="toggle toggle-positive">
+    <input type="checkbox" ng-model="t2">
+    <div class="track">
+      <div class="handle"></div>
+    </div>
+  </label>
+</div>
+
+<div class="item item-toggle">
+  A {{t1? 'highlighted':'non-highlighted'}} trigger says {{t1? 'yes':'no'}}
+  <label class="toggle toggle-energized">
+    <input type="checkbox" ng-model="t1">
+    <div class="track">
+      <div class="handle"></div>
+    </div>
+  </label>
+</div>
