@@ -9,12 +9,14 @@ angular.module('app', [
     'ionic',
     'ngAnimate',
     '720kb.tooltips',
-    'firebase'
+    'firebase',
+    'ui.utils.masks'
   ])
   .config(config)
   .run(run)
   .factory('DatabaseService', DatabaseService)
   .directive('signPad', signPad)
+  .directive('groupedRadio', groupedRadio)
   .factory('BitlyService', BitlyService)
   .controller('HomeCtrl', HomeCtrl)
   .controller('RecipeCtrl', RecipeCtrl)

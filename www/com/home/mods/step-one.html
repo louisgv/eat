@@ -22,11 +22,18 @@
   <div class="item">
     <div class="row">
 
-      <input class="col col-50" type="text" placeholder="First Name" ng-model="name.firstName" ng-change="console.log(childCount)">
+      <input class="col col-40" type="text" placeholder="First Name" ng-model="name.firstName" ng-change="console.log(childCount)">
 
       <input class="col col-10" type="text" placeholder="MI" ng-model="name.middleInitial" ng-change="console.log(childCount)" maxlength="1">
 
       <input class="col col-40" type="text" placeholder="Last Name" ng-model="name.lastName" ng-change="console.log(childCount)">
+
+      <label class="col col-10 toggle toggle-assertive">
+        <input type="checkbox" ng-model="show">
+        <div class="track">
+          <div class="handle"></div>
+        </div>
+      </label>
 
     </div>
   </div>

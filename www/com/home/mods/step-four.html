@@ -49,8 +49,7 @@
 
   <ion-item>
     Optional Items :
-    <input type="tel" placeholder="Day-time Phone">
-
+    <input type="text" placeholder="Day-time Phone" ng-model="phone" ng-change="home.log(phone)" ui-us-phone-number>
     <input type="email" placeholder="Email">
 
   </ion-item>

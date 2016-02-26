@@ -9,6 +9,10 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService, Datab
 
   home.colors = ["button-positive", "button-royal", "button-balanced"];
 
+  home.log = function (stuff) {
+    console.log(stuff);
+  }
+
   home.races = {
     "American or Alaskan Native": "toggle-calm",
     "Asian": "toggle-balanced",

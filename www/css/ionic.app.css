@@ -9102,6 +9102,12 @@ a.button {
   flex-flow: row wrap;
   justify-content: space-around; }
 
+.home .button-bar > .button:last-child {
+  border-radius: 0 20px 20px 0 !important; }
+
+.home .button-bar > .button:first-child {
+  border-radius: 20px 0 0 20px !important; }
+
 .recipe .card {
   margin-top: 80px;
   margin-bottom: 40px;
