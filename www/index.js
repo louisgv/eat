@@ -35,14 +35,22 @@ function config($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       templateUrl: 'com/home/home.html',
       controller: 'HomeCtrl as home'
     })
-    .state('recipe', {
-      url: '/r',
-      templateUrl: 'com/recipe/recipe.html',
-      controller: 'RecipeCtrl as recipe',
+    .state('feedback', {
+      url: '/feedback',
+      templateUrl: 'com/feedback/feedback.html',
+      controller: 'FeedbackCtrl as feedback',
       params: {
         index: null
       }
-    });
+    })
+    .state('report', {
+      url: '/report',
+      templateUrl: 'com/report/report.html',
+      controller: 'ReportCtrl as report',
+      params: {
+        index: null
+      }
+    })
   // .state('app.deal', {
   //   url: '/deallists/:dealId',
   //   views: {
@@ -70,5 +78,5 @@ function run($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
-  // fb = new Firebase("https://e-a-t.firebaseio.com/users/");
+  fb = new Firebase("https://e-a-t.firebaseio.com/");
 }
