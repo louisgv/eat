@@ -9,7 +9,7 @@
 <!-- A checkbox for all these option down here -->
 
 <div class="card">
-  <div class="item row text-center">
+  <div class="item row responsive-sm text-center">
     <div class="col col-33">
       <div class="item item-toggle" ng-class="{'item-energized': snap}">
         SNAP
@@ -20,8 +20,8 @@
           </div>
         </label>
       </div>
-      <div class="item item-input">
-        <input ng-show="snap" class="col" type="text" placeholder="Please Provide Your Case Number" ng-model="caseNumber.snap" ng-change="console.log(childCount)">
+      <div class="item item-input" ng-show="snap">
+        <input class="col" type="text" placeholder="Please Provide Your Case Number" ng-model="caseNumber.snap" ng-change="console.log(childCount)">
       </div>
     </div>
     <div class="col col-33">
@@ -34,8 +34,8 @@
           </div>
         </label>
       </div>
-      <div class="item item-input">
-        <input ng-show="tanf" class="col" type="text" placeholder="Please Provide Your Case Number" ng-model="caseNumber.tanf" ng-change="console.log(childCount)">
+      <div class="item item-input" ng-show="tanf">
+        <input class="col" type="text" placeholder="Please Provide Your Case Number" ng-model="caseNumber.tanf" ng-change="console.log(childCount)">
       </div>
     </div>
     <div class="col col-33">
@@ -48,8 +48,8 @@
           </div>
         </label>
       </div>
-      <div class="item item-input">
-        <input ng-show="fdpir" class="col" type="text" placeholder="Please Provide Your Case Number" ng-model="caseNumber.fdpir" ng-change="console.log(childCount)">
+      <div class="item item-input" ng-show="fdpir">
+        <input class="col" type="text" placeholder="Please Provide Your Case Number" ng-model="caseNumber.fdpir" ng-change="console.log(childCount)">
       </div>
     </div>
   </div>
@@ -57,17 +57,61 @@
 
 <div class="card">
   <div class="item item-text-wrap item-assertive">
+    Info Section
   </div>
 
-  <div class="button-bar">
-    <!-- <button class="button button-positive icon-left" ng-disabled="!caseNumber">
-      <i class="icon ion-checkmark"></i> Yes
-    </button> -->
+  <ion-item class="item-text-wrap text-center">
+    <p>
+      For more info regarding each program, please expand each section below:
+    </p>
+  </ion-item>
 
-    <!-- <button class="button button-balanced">
-      No <i class="icon ion-chevron-right"></i>
-    </button> -->
+  <div class="item row responsive-sm text-center">
+    <div class="col col-33">
+      <div class="item item-toggle">
+        SNAP
+        <label class="toggle toggle-assertive">
+          <input type="checkbox" ng-model="snapInfo">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+      <div class="item" ng-show="snapInfo">
+
+      </div>
+    </div>
+    <div class="col col-33">
+      <div class="item item-toggle">
+        TANF
+        <label class="toggle toggle-energized">
+          <input type="checkbox" ng-model="tanfInfo">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+      <div class="item" ng-show="tanfInfo">
+
+      </div>
+    </div>
+    <div class="col col-33">
+      <div class="item item-toggle">
+        FDPIR
+        <label class="toggle toggle-balanced">
+          <input type="checkbox" ng-model="fdpirInfo">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </div>
+      <div class="item" ng-show="fdpirInfo">
+
+      </div>
+    </div>
   </div>
+
+
 </div>
 
 <div class="padding">
@@ -75,21 +119,4 @@
     <i class="icon ion-forward"></i>
     Save and Proceed
   </button>
-</div>
-
-<div class="card">
-  <ion-item>
-    For more info regarding each program, please tap each button below:
-  </ion-item>
-  <div class="button-bar">
-    <button class="button">
-      SNAP
-    </button>
-    <button class="button">
-      TANF
-    </button>
-    <button class="button">
-      FDPIR
-    </button>
-  </div>
 </div>

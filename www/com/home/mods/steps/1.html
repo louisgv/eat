@@ -2,8 +2,9 @@
 
 <div class="card text-center limit-size">
   <ion-item class="item-text-wrap">
-    <b>Step 1:</b>
-    Please provide information regarding your child's identity
+    <p>
+      Please provide information regarding your child's identity
+    </p>
   </ion-item>
 </div>
 
@@ -33,12 +34,12 @@
       </div>
 
       <ion-list ng-if="name.firstName">
-        <div class="item">
+        <div class="item item-text-wrap">
           <div class="row">
-            <label class="col col-90">Is
+            <label class="col col-80">Is
               {{name.firstName}}
               a Student?</label>
-            <label class="col col-10 toggle toggle-assertive">
+            <label class="col col-20 toggle toggle-assertive">
               <input type="checkbox" ng-model="child.isStudent">
               <div class="track">
                 <div class="handle"></div>
@@ -47,12 +48,12 @@
           </div>
         </div>
 
-        <div class="item">
+        <div class="item item-text-wrap">
           <div class="row">
-            <label class="col col-90">Is
+            <label class="col col-80">Is
               {{name.firstName}}
               Homeless, Migrant or Runaway?</label>
-            <label class="col col-10 toggle toggle-energized">
+            <label class="col col-20 toggle toggle-energized">
               <input type="checkbox" ng-model="child.isHMR">
               <div class="track">
                 <div class="handle"></div>
@@ -61,12 +62,12 @@
           </div>
         </div>
 
-        <div class="item">
+        <div class="item item-text-wrap">
           <div class="row">
-            <label class="col col-90">
+            <label class="col col-80">
               <b>(Optional)</b>
               Racial and Ethnic</label>
-            <label class="col col-10 toggle toggle-positive">
+            <label class="col col-20 toggle toggle-positive">
               <input type="checkbox" ng-model="home.form.child.showER">
               <div class="track">
                 <div class="handle"></div>
@@ -77,38 +78,39 @@
 
         <div ng-show="home.form.child.showER">
 
-          <div class="item">
+          <ion-item class="item-text-wrap">
             <div class="row">
-              <label class="col col-90">
+              <label class="col col-80">
                 Is
                 {{name.firstName}}
                 <b>Hispanic</b>
                 or
                 <b>Latino</b>?</label>
-              <label class="col col-10 toggle toggle-royal">
+              <label class="col col-20 toggle toggle-royal">
                 <input type="checkbox" ng-model="child.isHispanic">
                 <div class="track">
                   <div class="handle"></div>
                 </div>
               </label>
             </div>
-          </div>
+          </ion-item>
 
-          <div class="item" ng-repeat="(key, value) in home.races">
+          <ion-item class="item-text-wrap" ng-repeat="(key, value) in home.races">
             <div class="row">
-              <label class="col col-90">
+              <label class="col col-80">
                 Is
                 {{name.firstName}}
                 <b>{{key}}</b>?
               </label>
-              <label class="col col-10 toggle" ng-class="value">
+              <label class="col col-20 toggle" ng-class="value">
                 <input type="checkbox" ng-model="child[key]">
                 <div class="track">
                   <div class="handle"></div>
                 </div>
               </label>
             </div>
-          </div>
+          </ion-item>
+
         </div>
       </ion-list>
     </div>
