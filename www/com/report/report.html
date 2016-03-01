@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<ion-view class="report" cache-view="false" hide-nav-bar="true">
+  <ion-content class="app-bg">
+    <div class="card" ng-repeat="f in report.data | orderBy : '-date'">
+
+      <div class="row">
+        <div class="col col-33">
+          <ion-item class="item-positive text-center">
+            <b>
+              {{f.date | date : 'M/d/yy'}}
+            </b>
+          </ion-item>
+        </div>
+        <div class="col">
+          <ion-item>
+            {{f.name}}
+          </ion-item>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <label class="col col-67">
+            Time Taken
+          </label>
+          <label class="col col-33 toggle toggle-energized">
+            <p>
+              {{f.duration}} minutes
+            </p>
+          </label>
+        </div>
+      </div>
+
+      <div class="item item-text-wrap" ng-repeat="(key,value) in f.score">
+        <div class="row">
+          <label class="col col-67">
+            {{report.tag[key].text}}
+          </label>
+          <label class="col col-33 toggle toggle-energized">
+            <p>
+              {{value}}/10
+            </p>
+          </label>
+        </div>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
