@@ -1,7 +1,7 @@
 {
-  "name": "quan",
-  "version": "1.1.1",
-  "description": "quan: Q&A for education",
+  "name": "eat",
+  "version": "1.0.0",
+  "description": "eat: form",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",

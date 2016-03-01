@@ -1,4 +1,4 @@
-function DatabaseService($firebaseObject) {
+function DatabaseService($firebaseObject, $firebaseArray) {
   console.log('DatabaseServ');
 
   var userName;
@@ -16,7 +16,14 @@ function DatabaseService($firebaseObject) {
 
   var user;
 
+  var Report = $firebaseArray.$extend({
+    // these methods exist on the prototype, so we can access the data using `this`
+  });
+
+  var report  = new Report(fb.child('feedback'));
+
   return {
+    report: report,
     recipes: recipes,
     userName: userName,
     user: user,

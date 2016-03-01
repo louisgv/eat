@@ -20,6 +20,7 @@ angular.module('app', [
   .factory('BitlyService', BitlyService)
   .controller('HomeCtrl', HomeCtrl)
   .controller('RecipeCtrl', RecipeCtrl)
+    .controller('ReportCtrl', ReportCtrl)
 
 function config($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
