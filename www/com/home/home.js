@@ -2,7 +2,7 @@
 
 var recipesAPI = "./com/home/db/recipes.json";
 
-function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService, DatabaseService) {
+function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService, DatabaseService, $ionicSlideBoxDelegate, $ionicScrollDelegate, $timeout) {
   console.log("HomeCtrl");
 
   var home = this;
@@ -13,7 +13,65 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService, Datab
     console.log(stuff);
   }
 
+  home.step = 0;
+
+  home.nextStep = function () {
+    ++home.step;
+  }
+
+  var adult = {
+
+  }
+
+  home.data = {
+    children: [],
+    adults: []
+  }
+
+  home.form = {
+    child: {
+      showER: false
+    },
+    adult: {
+
+    }
+  }
+
+  home.formNormalize = function (form) {
+    for(var property in home.form[form]) {
+      if(home.form[form].hasOwnProperty(property)) {
+        home.form[form][property] = false;
+      }
+    }
+  }
+
+  home.slideTo = function (index) {
+    $ionicSlideBoxDelegate.slide(index, 999);
+  }
+
+  home.addChild = function () {
+    home.data.children.push({
+      name: {
+        f: "",
+        m: "",
+        l: ""
+      },
+      isStudent: false,
+      isHMR: false
+    });
+    home.formNormalize('child');
+    $ionicSlideBoxDelegate.update();
+    $ionicScrollDelegate.scrollTop();
+    console.log(home.data.children.length - 1);
+    $timeout(function () {
+      $ionicSlideBoxDelegate.slide(home.data.children.length - 1, 999);
+    }, 99);
+  }
+
+  home.addChild();
+
   home.filler = {
+
   }
 
   home.tutGo = true;
@@ -55,15 +113,6 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService, Datab
     });
 
     // home.recipe.steps = home.recipe.steps.reverse();
-  }
-
-  home.constructChildList = function (childCount) {
-    console.log(childCount);
-    if(!childCount) return;
-    home.childList = [];
-    for(var i = 0; i < home.childCount; i++) {
-      home.childList.push(childForm);
-    }
   }
 
   // home.

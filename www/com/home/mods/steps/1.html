@@ -1,113 +1,142 @@
 <!DOCTYPE html>
 
-<div class="card text-center">
-  <ion-item>
-    <!-- XXX: Somethiing more catchy here -->
-    Children
+<div class="card text-center limit-size">
+  <ion-item class="item-text-wrap">
+    <b>Step 1:</b>
+    Please provide information regarding your child's identity
   </ion-item>
 </div>
 
-<div class="card">
+<ion-slide-box on-slide-changed="home.formNormalize('child')">
+  <ion-slide ng-repeat="child in home.data.children">
 
-  <!-- XXX: Toggle here -->
+    <!-- XXX: Toggle here -->
 
-  <div class="item item-text-wrap item-positive">
-  </div>
+    <div class="card limit-size">
+      <!-- <div class="item item-text-wrap item-positive">Child #{{$index+1}}</div> -->
 
-  <!-- <label class="item item-input row">
+      <!-- <label class="item item-input row">
         <span class="col col-80 input-label">How many children do you have?</span>
         <input class="col col-20" type="number" placeholder="E.g 2" ng-model="childCount" ng-change="home.constructChildList(childCount)">
       </label> -->
 
-  <div class="item">
-    <div class="row">
-
-      <input class="col col-40" type="text" placeholder="First Name" ng-model="name.firstName" ng-change="console.log(childCount)">
-
-      <input class="col col-10" type="text" placeholder="MI" ng-model="name.middleInitial" ng-change="console.log(childCount)" maxlength="1">
-
-      <input class="col col-40" type="text" placeholder="Last Name" ng-model="name.lastName" ng-change="console.log(childCount)">
-
-      <label class="col col-10 toggle toggle-assertive">
-        <input type="checkbox" ng-model="show">
-        <div class="track">
-          <div class="handle"></div>
-        </div>
-      </label>
-
-    </div>
-  </div>
-
-  <ion-list ng-if="name.firstName">
-    <div class="item">
-      <div class="row">
-        <label class="col col-90">Is {{name.firstName}} a Student?</label>
-        <label class="col col-10 toggle toggle-assertive">
-          <input type="checkbox" ng-model="child.isStudent">
-          <div class="track">
-            <div class="handle"></div>
-          </div>
-        </label>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="row">
-        <label class="col col-90">Is {{name.firstName}} Homeless, Migrant or Runaway?</label>
-        <label class="col col-10 toggle toggle-energized">
-          <input type="checkbox" ng-model="child.isHMR">
-          <div class="track">
-            <div class="handle"></div>
-          </div>
-        </label>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="row">
-        <label class="col col-90"> <b>(Optional)</b> Racial and Ethnic</label>
-        <label class="col col-10 toggle toggle-positive">
-          <input type="checkbox" ng-model="show">
-          <div class="track">
-            <div class="handle"></div>
-          </div>
-        </label>
-      </div>
-    </div>
-
-    <div ng-show="show">
-      <div class="item text-center">
-        <label> <b>Ethnicity</b>:</label>
-      </div>
       <div class="item">
         <div class="row">
-          <label class="col col-90">Is {{name.firstName}} <b>Hispanic</b> or <b>Latino</b>?</label>
-          <label class="col col-10 toggle toggle-royal">
-            <input type="checkbox" ng-model="child.isHispanic">
-            <div class="track">
-              <div class="handle"></div>
-            </div>
-          </label>
+
+          <input class="col col-40" type="text" placeholder="First Name" ng-model="name.firstName">
+
+          <input class="col col-20" type="text" placeholder="MI" ng-model="name.middleInitial" maxlength="1">
+
+          <input class="col col-40" type="text" placeholder="Last Name" ng-model="name.lastName">
+
         </div>
-      </div>
-      <div class="item text-center">
-        <label> <b>Race</b> (check one or more):</label>
       </div>
 
-      <div class="item" ng-repeat="(key, value) in home.races">
-        <div class="row">
-          <label class="col col-90">
-            Is {{name.firstName}} <b>{{key}}</b>?
-          </label>
-          <label class="col col-10 toggle" ng-class="value">
-            <input type="checkbox" ng-model="child[key]">
-            <div class="track">
-              <div class="handle"></div>
-            </div>
-          </label>
+      <ion-list ng-if="name.firstName">
+        <div class="item">
+          <div class="row">
+            <label class="col col-90">Is
+              {{name.firstName}}
+              a Student?</label>
+            <label class="col col-10 toggle toggle-assertive">
+              <input type="checkbox" ng-model="child.isStudent">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </div>
         </div>
-      </div>
+
+        <div class="item">
+          <div class="row">
+            <label class="col col-90">Is
+              {{name.firstName}}
+              Homeless, Migrant or Runaway?</label>
+            <label class="col col-10 toggle toggle-energized">
+              <input type="checkbox" ng-model="child.isHMR">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <label class="col col-90">
+              <b>(Optional)</b>
+              Racial and Ethnic</label>
+            <label class="col col-10 toggle toggle-positive">
+              <input type="checkbox" ng-model="home.form.child.showER">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div ng-show="home.form.child.showER">
+
+          <div class="item">
+            <div class="row">
+              <label class="col col-90">
+                Is
+                {{name.firstName}}
+                <b>Hispanic</b>
+                or
+                <b>Latino</b>?</label>
+              <label class="col col-10 toggle toggle-royal">
+                <input type="checkbox" ng-model="child.isHispanic">
+                <div class="track">
+                  <div class="handle"></div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="item" ng-repeat="(key, value) in home.races">
+            <div class="row">
+              <label class="col col-90">
+                Is
+                {{name.firstName}}
+                <b>{{key}}</b>?
+              </label>
+              <label class="col col-10 toggle" ng-class="value">
+                <input type="checkbox" ng-model="child[key]">
+                <div class="track">
+                  <div class="handle"></div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </ion-list>
     </div>
-  </ion-list>
 
+    <div class="padding limit-size">
+      <div class="button-bar padding">
+        <button class="button button-full button-assertive" ng-click="home.slideTo($index-1)" ng-disabled="$index===0">
+          <i class="icon ion-chevron-left"></i>
+          Back
+        </button>
+        <div class="button button-block button-balanced icon-right" ng-click="home.addChild();">
+          <i class="icon ion-plus"></i>
+          Add
+        </div>
+        <button class="button button-full button-positive" ng-click="home.slideTo($index+1)" ng-disabled="($index===home.data.children.length-1)">
+          Next
+          <i class="icon ion-chevron-right"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </ion-slide>
+</ion-slide-box>
+
+<div class="padding">
+  <button class="button button-block button-royal limit-size" ng-click="home.nextStep()">
+    <i class="icon ion-forward"></i>
+    Save and Proceed
+  </button>
 </div>

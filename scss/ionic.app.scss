@@ -43,10 +43,13 @@ textarea {
   background-repeat: no-repeat;
 }
 
-.card {
+.limit-size {
   max-width: 900px;
-  width: 95.4vw;
   margin: 9px auto auto;
+}
+
+.card {
+  width: 95.4vw;
   border-radius: 4.5px;
 }
 

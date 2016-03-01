@@ -1,6 +1,10 @@
 .home {
-  .card {
+  .f-content {
     margin-top: 18vh;
+  }
+
+  .button-round {
+    border-radius: 50%;
   }
 
   .question-form {
@@ -25,5 +29,13 @@
 
   .button-bar > .button:first-child {
     border-radius: 20px 0 0 20px !important;
+  }
+
+  .slider-pager {
+    bottom: 0;
+  }
+
+  .item.item-input {
+    background-color: transparent;
   }
 }

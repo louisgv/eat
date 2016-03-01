@@ -9089,8 +9089,11 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.home .card {
+.home .f-content {
   margin-top: 18vh; }
+
+.home .button-round {
+  border-radius: 50%; }
 
 .home .question-form {
   margin-top: 18vh; }
@@ -9109,6 +9112,12 @@ a.button {
 
 .home .button-bar > .button:first-child {
   border-radius: 20px 0 0 20px !important; }
+
+.home .slider-pager {
+  bottom: 0; }
+
+.home .item.item-input {
+  background-color: transparent; }
 
 .recipe .card {
   margin-top: 80px;
@@ -9163,10 +9172,12 @@ textarea {
   background-size: cover;
   background-repeat: no-repeat; }
 
-.card {
+.limit-size {
   max-width: 900px;
+  margin: 9px auto auto; }
+
+.card {
   width: 95.4vw;
-  margin: 9px auto auto;
   border-radius: 4.5px; }
 
 .sign {
