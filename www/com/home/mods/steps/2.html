@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<div class="card text-center">
+
+<div class="card text-center limit-size">
+  <ion-item class="item-balanced">
+    <b>Step 2</b>
+  </ion-item>
   <ion-item class="item-text-wrap">
-    <!-- XXX: Somethiing more catchy here -->
-    Do any Household Members (including you) currently participate in one or more of the following assistance programs: <b>SNAP</b>, <b>TANF</b>, or <b>FDPIR</b>?
+
+    Do any Household Members (including you) currently participate in one or more of the following assistance programs:
+    <b>SNAP</b>,
+    <b>TANF</b>, or
+    <b>FDPIR</b>?
   </ion-item>
 </div>
 
 <!-- A checkbox for all these option down here -->
 
-<div class="card">
+<div class="card limit-size">
   <div class="item row responsive-sm text-center">
     <div class="col col-33">
       <div class="item item-toggle" ng-class="{'item-energized': snap}">
@@ -55,7 +62,7 @@
   </div>
 </div>
 
-<div class="card">
+<div class="card limit-size">
   <div class="item item-text-wrap item-assertive">
     Info Section
   </div>
@@ -77,9 +84,7 @@
           </div>
         </label>
       </div>
-      <div class="item" ng-show="snapInfo">
-
-      </div>
+      <div class="item" ng-show="snapInfo"></div>
     </div>
     <div class="col col-33">
       <div class="item item-toggle">
@@ -91,9 +96,7 @@
           </div>
         </label>
       </div>
-      <div class="item" ng-show="tanfInfo">
-
-      </div>
+      <div class="item" ng-show="tanfInfo"></div>
     </div>
     <div class="col col-33">
       <div class="item item-toggle">
@@ -105,17 +108,14 @@
           </div>
         </label>
       </div>
-      <div class="item" ng-show="fdpirInfo">
-
-      </div>
+      <div class="item" ng-show="fdpirInfo"></div>
     </div>
   </div>
-
 
 </div>
 
 <div class="padding">
-  <button class="button button-block button-royal" ng-click="home.nextStep()">
+  <button class="button button-block button-royal limit-size" ng-click="home.nextStep()">
     <i class="icon ion-forward"></i>
     Save and Proceed
   </button>
