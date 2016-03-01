@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<div class="card text-center">
+
+<div class="card text-center limit-size">
+  <ion-item class="item-balanced">
+    <b>Final Step</b>
+  </ion-item>
   <ion-item class="item-text-wrap">
-    <!-- XXX: Somethiing more catchy here -->
-    Contact information and adult signature
+    Please provide information regarding your Contact Information
   </ion-item>
 </div>
 
+
 <!-- A checkbox for all these option down here -->
 
-<div class="card">
+<div class="card limit-size">
 
   <ion-item class="item-dark"></ion-item>
 
@@ -55,13 +59,19 @@
   </ion-item>
 
   <ion-item>
-    Today's date: {{currentDate}}
+    Today's date:
+    {{currentDate}}
   </ion-item>
 
-  <ion-item>
-    <input sign-pad signer="Adult"
-      sign-template="com/home/mods/pad.html" ng-model="adultSignature" />
-  </ion-item>
+</div>
 
+<div class="padding limit-size">
+  <input sign-pad signer="Adult" sign-template="com/home/mods/pad.html" ng-model="adultSignature"/>
+</div>
 
+<div class="padding">
+  <button class="button button-block button-royal limit-size" ng-click="home.nextStep()">
+    <i class="icon ion-forward"></i>
+    Save and Proceed
+  </button>
 </div>

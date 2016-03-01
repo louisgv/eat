@@ -1,11 +1,16 @@
-<button class="button button-full button-light" ng-click="openSignatureModal()">
-  <div ng-hide="signature">
-    {{signer}} Signature
+<div>
+  <div class="item">
+    <img ng-src="{{signature}}" class="sign"/>
   </div>
 
-  <div ng-show="signature">
-    <img ng-src="{{signature}}" class="sign" />
-    <br>
-    Edit Signature
-  </div>
-</button>
+  <button class="button button-block button-positive" ng-click="openSignatureModal()">
+    <i class="icon ion-android-create"></i>
+    <span ng-hide="signature">
+      Add
+      Signature
+    </span>
+    <span ng-show="signature">
+      Edit Signature
+    </span>
+  </button>
+</div>

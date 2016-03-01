@@ -11,121 +11,119 @@
 
 <!-- A checkbox for all these option down here -->
 
-<div class="card limit-size">
-  <div class="item item-text-wrap item-assertive">
-  </div>
+<ion-slide-box on-slide-changed="home.formNormalize('adult')">
 
-  <div class="item">
-    <div class="row">
-      <label class="col col-80">Total Child Income?</label>
-      <input class="col col-20" type="text" ng-model="child.income.amount" ui-money-mask placeholder="$99.99" />
-    </div>
+  <ion-slide ng-repeat="adult in home.data.adults">
 
-    <div class="button-bar">
+    <div class="card limit-size">
+      <div class="item item-text-wrap item-assertive"></div>
+      <div class="item text-center">
+        Adult Information
+      </div>
 
-      <div class="button-bar padding">
-        <a grouped-radio="'Weekly'" on="assertive" off="positive" ng-model="child.income.frequency">
-        </a>
-        <a grouped-radio="'Bi Weekly'" on="assertive" off="positive" ng-model="child.income.frequency">
-        </a>
-        <a grouped-radio="'2x Monthly'" on="assertive" off="positive" ng-model="child.income.frequency">
-        </a>
-        <a grouped-radio="'Monthly'" on="assertive" off="positive" ng-model="child.income.frequency">
-        </a>
+      <div class="item text-center">
+        <div class="row">
+
+          <input class="col col-50" type="text" placeholder="First Name" ng-model="name.firstName" ng-change="console.log(childCount)">
+
+          <input class="col col-10" type="text" placeholder="MI" ng-model="name.middleInitial" ng-change="console.log(childCount)" maxlength="1">
+
+          <input class="col col-40" type="text" placeholder="Last Name" ng-model="name.lastName" ng-change="console.log(childCount)">
+
+        </div>
+
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <label class="col col-80">Earning From Work</label>
+          <input class="col col-20" type="text" ng-model="child.income.amount" ui-money-mask placeholder="$99.99"/>
+        </div>
+        <div class="button-bar">
+
+          <div class="button-bar padding">
+            <a grouped-radio="'W'" on="assertive" off="positive" ng-model="frequency"></a>
+            <a grouped-radio="'2W'" on="assertive" off="positive" ng-model="frequency"></a>
+            <a grouped-radio="'M'" on="assertive" off="positive" ng-model="frequency"></a>
+            <a grouped-radio="'2M'" on="assertive" off="positive" ng-model="frequency"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <label class="col col-80">Public Assistance/Child Support/Alimony</label>
+          <input class="col col-20" type="text" ng-model="child.income.amount" ui-money-mask placeholder="$99.99"/>
+        </div>
+        <div class="button-bar">
+
+          <div class="button-bar padding">
+            <a grouped-radio="'W'" on="assertive" off="positive" ng-model="frequency"></a>
+            <a grouped-radio="'2W'" on="assertive" off="positive" ng-model="frequency"></a>
+            <a grouped-radio="'M'" on="assertive" off="positive" ng-model="frequency"></a>
+            <a grouped-radio="'2M'" on="assertive" off="positive" ng-model="frequency"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <label class="col col-80">Pensions/Retirement/All Other Income</label>
+          <input class="col col-20" type="text" ng-model="child.income.amount" ui-money-mask="0" placeholder="$99"/>
+        </div>
+        <div class="button-bar">
+
+          <div class="button-bar padding">
+            <a grouped-radio="'W'" on="assertive" off="positive" ng-model="frequency"></a>
+            <a grouped-radio="'2W'" on="assertive" off="positive" ng-model="frequency"></a>
+            <a grouped-radio="'M'" on="assertive" off="positive" ng-model="frequency"></a>
+            <a grouped-radio="'2M'" on="assertive" off="positive" ng-model="frequency"></a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="card limit-size">
-  <div class="item item-text-wrap item-assertive">
-  </div>
-  <div class="item text-center">
-    Adult Information
-  </div>
-
-  <div class="item text-center">
-    <div class="row">
-
-      <input class="col col-50" type="text" placeholder="First Name" ng-model="name.firstName" ng-change="console.log(childCount)">
-
-      <input class="col col-10" type="text" placeholder="MI" ng-model="name.middleInitial" ng-change="console.log(childCount)" maxlength="1">
-
-      <input class="col col-40" type="text" placeholder="Last Name" ng-model="name.lastName" ng-change="console.log(childCount)">
-
-    </div>
-
-  </div>
-  <div class="item">
-    <div class="row">
-      <label class="col col-80">Earning From Work</label>
-      <input class="col col-20" type="text" ng-model="child.income.amount" ui-money-mask placeholder="$99.99" />
-    </div>
-    <div class="button-bar">
-
+    <div class="padding limit-size">
       <div class="button-bar padding">
-        <a grouped-radio="'Weekly'" on="assertive" off="positive" ng-model="frequency">
-        </a>
-        <a grouped-radio="'Bi Weekly'" on="assertive" off="positive" ng-model="frequency">
-        </a>
-        <a grouped-radio="'2x Monthly'" on="assertive" off="positive" ng-model="frequency">
-        </a>
-        <a grouped-radio="'Monthly'" on="assertive" off="positive" ng-model="frequency">
-        </a>
+        <button class="button button-full button-assertive" ng-click="home.slideTo($index-1)" ng-disabled="$index===0">
+          <i class="icon ion-chevron-left"></i>
+          Back
+        </button>
+        <div class="button button-block button-balanced icon-right" ng-click="home.addAdult()">
+          <i class="icon ion-plus"></i>
+          Add
+        </div>
+        <button class="button button-full button-positive" ng-click="home.slideTo($index+1)" ng-disabled="($index===home.data.adults.length-1)">
+          Next
+          <i class="icon ion-chevron-right"></i>
+        </button>
       </div>
     </div>
+
+  </ion-slide>
+</ion-slide-box>
+
+<div class="padding">
+  <div class="item item-text-wrap">
+    Based on the provided infomation, <b>{{name}}</b>
+    is the primary wage earner, with total income of
+    <b>${{income}}</b>
+    Annually
   </div>
-
-  <div class="item">
-    <div class="row">
-      <label class="col col-80">Public Assistance/Child Support/Alimony</label>
-      <input class="col col-20" type="text" ng-model="child.income.amount" ui-money-mask placeholder="$99.99" />
-    </div>
-    <div class="button-bar">
-
-      <div class="button-bar padding">
-        <a grouped-radio="'Weekly'" on="assertive" off="positive" ng-model="frequency">
-        </a>
-        <a grouped-radio="'Bi Weekly'" on="assertive" off="positive" ng-model="frequency">
-        </a>
-        <a grouped-radio="'2x Monthly'" on="assertive" off="positive" ng-model="frequency">
-        </a>
-        <a grouped-radio="'Monthly'" on="assertive" off="positive" ng-model="frequency">
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="row">
-      <label class="col col-80">Pensions/Retirement/All Other Income</label>
-      <input class="col col-20" type="text" ng-model="child.income.amount" ui-money-mask placeholder="$99.99" />
-    </div>
-    <div class="button-bar">
-
-      <div class="button-bar padding">
-        <a grouped-radio="'Weekly'" on="assertive" off="positive" ng-model="frequency">
-        </a>
-        <a grouped-radio="'Bi Weekly'" on="assertive" off="positive" ng-model="frequency">
-        </a>
-        <a grouped-radio="'2x Monthly'" on="assertive" off="positive" ng-model="frequency">
-        </a>
-        <a grouped-radio="'Monthly'" on="assertive" off="positive" ng-model="frequency">
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="item">
-    From Our Calculation, We determined that <b>{{name}}</b> is the primary wage earner, with total income of <b>{{income}}</b> Annually
-  </div>
-  <div class="item">
+  <div class="item item-text-wrap">
     <div class="row">
       <label class="col col-80">
-        Please provide the last 4 digit of <b>{{name}}</b>'s Social Security Number
+        Please provide the last 4 digit of
+        <b>{{name}}</b>'s Social Security Number
       </label>
       <input class="col col-20" type="number" ng-model="adult.ssn" placeholder="9999" maxlength="4"/>
     </div>
   </div>
+</div>
 
+<div class="padding">
+  <button class="button button-block button-royal limit-size" ng-click="home.nextStep()">
+    <i class="icon ion-forward"></i>
+    Save and Proceed
+  </button>
 </div>

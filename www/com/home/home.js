@@ -19,10 +19,6 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService, Datab
     ++home.step;
   }
 
-  var adult = {
-
-  }
-
   home.data = {
     children: [],
     adults: []
@@ -30,7 +26,8 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService, Datab
 
   home.form = {
     child: {
-      showER: false
+      showER: false,
+      showIncome: false
     },
     adult: {
 
@@ -62,13 +59,32 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService, Datab
     home.formNormalize('child');
     $ionicSlideBoxDelegate.update();
     $ionicScrollDelegate.scrollTop();
-    console.log(home.data.children.length - 1);
+
     $timeout(function () {
       $ionicSlideBoxDelegate.slide(home.data.children.length - 1, 999);
     }, 99);
   }
 
+  home.addAdult = function () {
+    home.data.adults.push({
+      name: {
+        f: "",
+        m: "",
+        l: ""
+      },
+    });
+    home.formNormalize('adult');
+    $ionicSlideBoxDelegate.update();
+    $ionicScrollDelegate.scrollTop();
+
+    $timeout(function () {
+      $ionicSlideBoxDelegate.slide(home.data.adults.length - 1, 999);
+    }, 99);
+  }
+
   home.addChild();
+
+  home.addAdult();
 
   home.filler = {
 

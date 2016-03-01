@@ -3,7 +3,6 @@
 <div class="card text-center limit-size">
   <ion-item class="item-balanced"><b>Step 1</b></ion-item>
   <ion-item class="item-text-wrap">
-
       Please provide information regarding your child's identity
   </ion-item>
 </div>
@@ -52,6 +51,20 @@
           <div class="row">
             <label class="col col-80">Is
               {{name.firstName}}
+              your Foster Child?</label>
+            <label class="col col-20 toggle toggle-assertive">
+              <input type="checkbox" ng-model="child.isFoster">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="item item-text-wrap">
+          <div class="row">
+            <label class="col col-80">Is
+              {{name.firstName}}
               Homeless, Migrant or Runaway?</label>
             <label class="col col-20 toggle toggle-energized">
               <input type="checkbox" ng-model="child.isHMR">
@@ -60,6 +73,42 @@
               </div>
             </label>
           </div>
+        </div>
+
+        <div class="item item-text-wrap">
+          <div class="row">
+            <label class="col col-80">Does
+              {{name.firstName}}
+              receive incomes?</label>
+            <label class="col col-20 toggle toggle-energized">
+              <input type="checkbox" ng-model="home.form.child.showIncome">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </div>
+
+          <div class="card limit-size" ng-show="home.form.child.showIncome">
+            <div class="item item-text-wrap item-assertive"></div>
+
+            <div class="item">
+              <div class="row">
+                <label class="col col-50">Total Income:</label>
+                <input class="col col-50" type="text" ng-model="child.income.amount" ui-money-mask="0" placeholder="$99"/>
+              </div>
+
+              <div class="button-bar">
+
+                <div class="button-bar padding">
+                  <a grouped-radio="'W'" on="assertive" off="positive" ng-model="child.income.frequency"></a>
+                  <a grouped-radio="'2W'" on="assertive" off="positive" ng-model="child.income.frequency"></a>
+                  <a grouped-radio="'M'" on="assertive" off="positive" ng-model="child.income.frequency"></a>
+                  <a grouped-radio="'2M'" on="assertive" off="positive" ng-model="child.income.frequency"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <div class="item item-text-wrap">
