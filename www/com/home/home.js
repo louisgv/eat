@@ -34,6 +34,24 @@ function HomeCtrl($http, $state, $ionicLoading, $ionicPopup, BitlyService, Datab
     }
   }
 
+  home.getTodayDate = function () {
+    return Date.now();
+  }
+
+  function calculateAnnualIncome(adult) {
+
+  }
+
+  home.getPrimaryWageEarnerIndex = function () {
+    var c = 0;
+    for(var i = 0; i < home.data.adults.length; i++) {
+      if(home.data.adults[i].wage > home.data.adults[c].wage) {
+        c = i;
+      }
+    }
+    return c;
+  }
+
   home.formNormalize = function (form) {
     for(var property in home.form[form]) {
       if(home.form[form].hasOwnProperty(property)) {

@@ -74,40 +74,28 @@
 
   <div class="item row responsive-sm text-center">
     <div class="col col-33">
-      <div class="item item-toggle">
-        SNAP
-        <label class="toggle toggle-assertive">
-          <input type="checkbox" ng-model="snapInfo">
-          <div class="track">
-            <div class="handle"></div>
-          </div>
-        </label>
+      <div class="item">
+        <a href="http://www.fns.usda.gov/snap/supplemental-nutrition-assistance-program-snap" target="_blank">
+        <button class="button button-block button-energized" name="button">
+          SNAP
+        </button></a>
       </div>
-      <div class="item" ng-show="snapInfo"></div>
     </div>
     <div class="col col-33">
-      <div class="item item-toggle">
-        TANF
-        <label class="toggle toggle-energized">
-          <input type="checkbox" ng-model="tanfInfo">
-          <div class="track">
-            <div class="handle"></div>
-          </div>
-        </label>
+      <div class="item">
+        <a href="http://www.acf.hhs.gov/programs/ofa/programs/tanf" target="_blank">
+        <button class="button button-block button-assertive" name="button">
+          TANF
+        </button></a>
       </div>
-      <div class="item" ng-show="tanfInfo"></div>
     </div>
     <div class="col col-33">
-      <div class="item item-toggle">
-        FDPIR
-        <label class="toggle toggle-balanced">
-          <input type="checkbox" ng-model="fdpirInfo">
-          <div class="track">
-            <div class="handle"></div>
-          </div>
-        </label>
+      <div class="item">
+        <a href="http://www.fns.usda.gov/fdpir/food-distribution-program-indian-reservations-fdpir" target="_blank">
+        <button class="button button-block button-royal" name="button">
+          FDPIR
+        </button></a>
       </div>
-      <div class="item" ng-show="fdpirInfo"></div>
     </div>
   </div>
 

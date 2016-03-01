@@ -9,7 +9,6 @@
   </ion-item>
 </div>
 
-
 <!-- A checkbox for all these option down here -->
 
 <div class="card limit-size">
@@ -59,8 +58,16 @@
   </ion-item>
 
   <ion-item>
-    Today's date:
-    {{currentDate}}
+    <div class="row">
+      <label class="col col-67">
+        Today's date:
+      </label>
+      <label class="col col-33 toggle toggle-energized">
+        <p>
+          {{home.getTodayDate() | date : 'MM/dd/yyyy'}}
+        </p>
+      </label>
+    </div>
   </ion-item>
 
 </div>
